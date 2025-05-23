@@ -1,0 +1,30 @@
+# Node.js dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Local environment files (IMPORTANT: DO NOT COMMIT SECRETS)
+.env
+.env.*.local 
+# Keep .env.example and .env.production if it DOESN'T contain secrets and is for build config
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor directories and files
+.idea
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.sublime-workspace
+
+# Optional: Other Vite/tooling cache
+.vite/
+coverage/

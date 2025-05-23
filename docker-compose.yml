@@ -1,0 +1,32 @@
+
+
+services:
+  backend:
+    build: ./backend # Path to the backend Dockerfile directory
+    container_name: dental-backend
+    restart: unless-stopped
+    env_file:
+      - ./backend/.env # Loads environment variables from .env file in backend folder
+    ports:
+      - "8000:8000" # Maps host port 8000 to container port 8000
+    volumes:
+      # For development: mount your app code for hot-reloading (Python code)
+      # For production, you'd typically not mount the code this way.
+      - ./backend/app:/app/app 
+    networks:
+      - dental_network
+
+  frontend:
+    build: ./frontend # Path to the frontend Dockerfile directory
+    container_name: dental-frontend
+    restart: unless-stopped
+    ports:
+      - "5173:80" # Maps host port 5173 to Nginx container's port 80
+    depends_on:
+      - backend # Ensures backend starts before frontend (though Nginx will retry)
+    networks:
+      - dental_network
+
+networks:
+  dental_network:
+    driver: bridge

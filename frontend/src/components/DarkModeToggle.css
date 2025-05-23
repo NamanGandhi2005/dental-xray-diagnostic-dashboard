@@ -1,0 +1,41 @@
+.dark-mode-toggle {
+  background-color: var(--dm-toggle-bg, #f0f0f0); 
+  color: var(--dm-toggle-icon-color, #333);
+  border: 1px solid var(--dm-toggle-border-color, #ccc);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem; 
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+  
+  position: absolute; 
+  top: 50%;
+  right: 2rem; 
+  transform: translateY(-50%);
+}
+
+.dark-mode-toggle:hover {
+  background-color: var(--dm-toggle-bg-hover, #e0e0e0);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.dark-mode-toggle:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+
+.dark .dark-mode-toggle {
+  background-color: var(--dm-toggle-bg-dark, #4a5568);
+  color: var(--dm-toggle-icon-color-dark, #f0f2f5);
+  border-color: var(--dm-toggle-border-color-dark, #718096);
+}
+
+.dark .dark-mode-toggle:hover {
+  background-color: var(--dm-toggle-bg-hover-dark, #2d3748);
+}
