@@ -23,7 +23,7 @@ The Dental X-ray Diagnostic Dashboard is a full-stack web application designed t
 
 ## 🖼️ Screenshots
 
-*(Add your screenshots to an `assets/screenshots/` directory in your repository and update the paths below)*
+
 
 **1. Main Dashboard View (After Upload and Analysis):**
    ![image](https://github.com/user-attachments/assets/7e2d343b-ce35-432a-b333-3a42e4bd630c)
