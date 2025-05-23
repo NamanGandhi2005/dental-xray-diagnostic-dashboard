@@ -68,64 +68,83 @@ The Dental X-ray Diagnostic Dashboard is a full-stack web application designed t
 
 ### 1. Clone the Repository
 
-
+```bash
 git clone https://github.com/NamanGandhi2005/dental-xray-diagnostic-dashboard.git
 cd dental-xray-diagnostic-dashboard
+```
 
-## 2. Environment Configuration
-1.Backend (backend/.env):
-2.Navigate to the backend directory. Copy .env.example to .env:
-3.cd backend
-4.cp .env.example .env
+### 2. Environment Configuration
 
-Edit backend/.env and fill in your details:
+**Backend (`backend/.env`):**
+
+Navigate to the `backend` directory. Copy `.env.example` to `.env`:
+```bash
+cd backend
+cp .env.example .env
+```
+Edit `backend/.env` and fill in your details:
+```env
 ROBOFLOW_API_KEY="YOUR_ACTUAL_ROBOFLOW_API_KEY"
 ROBOFLOW_MODEL_ID="adr/6" # Or your specific Roboflow model ID (project_name/version)
 
 GEMINI_API_KEY="YOUR_GEMINI_API_KEY_OR_LEAVE_BLANK_TO_SIMULATE"
+```
 
-## Frontend (Environment variables are typically set for Docker builds):
-1.Navigate to the frontend directory.
-2.frontend/.env.development should exist for local development:
-3.VITE_API_BASE_URL=http://localhost:8000/api
+**Frontend (Environment variables are typically set for Docker builds):**
 
-frontend/.env.production is used for Docker builds:
-VITE_API_BASE_URL=/api/
+Navigate to the `frontend` directory.
+*   `frontend/.env.development` should exist for local development:
+    ```env
+    VITE_API_BASE_URL=http://localhost:8000/api
+    ```
+*   `frontend/.env.production` is used for Docker builds:
+    ```env
+    VITE_API_BASE_URL=/api/
+    ```
+    *(This assumes the Nginx proxy setup in the Dockerfile.)*
 
-## 3. Running the Application
-1.Using Docker (Recommended):
-2.Ensure Docker Desktop is running.
-3.From the project root directory (dental-xray-diagnostic-dashboard/):
-4.docker-compose up --build
+### 3. Running the Application
 
-## Access the application:
-Frontend: http://localhost:5173
-Backend API Docs: http://localhost:8000/docs
-To stop: Ctrl+C in the terminal, then docker-compose down.
+**Using Docker (Recommended):**
 
-## Running Locally:
-1.Backend (FastAPI):
-2.cd backend
-3.Create/activate Python venv: python -m venv venv then source venv/Scripts/activate (or equivalent for your OS).
-4.Install dependencies: pip install -r requirements.txt
-5.Ensure backend/.env is configured.
-6.Start server: uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+1.  Ensure Docker Desktop is running.
+2.  From the project root directory (`dental-xray-diagnostic-dashboard/`):
+    ```bash
+    docker-compose up --build
+    ```
+3.  Access the application:
+    *   Frontend: `http://localhost:5173`
+    *   Backend API Docs: `http://localhost:8000/docs`
 
-## Frontend (React):
-1.Open a new terminal.
-2.cd frontend
-3.Install dependencies: npm install
-4.Ensure frontend/.env.development is configured.
-5.Start server: npm run dev (Usually at http://localhost:5173)
+To stop: `Ctrl+C` in the terminal, then `docker-compose down`.
 
-## 4. Using the Application
-1.Open the application in your browser.
-2. Click "Choose DICOM/RVG File(s)" to select images.
-3. Files will be processed automatically.
-4.View results and diagnostic reports. Click on filenames in the "Processing History" to switch views if multiple files were uploaded.
+**Running Locally:**
 
+**Backend (FastAPI):**
+1.  `cd backend`
+2.  Create/activate Python venv: `python -m venv venv` then `source venv/Scripts/activate` (or equivalent for your OS).
+3.  Install dependencies: `pip install -r requirements.txt`
+4.  Ensure `backend/.env` is configured.
+5.  Start server: `uvicorn app.main:app --reload --host 0.0.0.0 --port 8000`
 
+**Frontend (React):**
+1.  Open a new terminal.
+2.  `cd frontend`
+3.  Install dependencies: `npm install`
+4.  Ensure `frontend/.env.development` is configured.
+5.  Start server: `npm run dev` (Usually at `http://localhost:5173`)
+
+### 4. Using the Application
+
+1.  Open the application in your browser.
+2.  Click "Choose DICOM/RVG File(s)" to select images.
+3.  Files will be processed automatically.
+4.  View results and diagnostic reports. Click on filenames in the "Processing History" to switch views if multiple files were uploaded.
+
+---
 ## 🛠️ Project Structure
+
+```
 dental-xray-diagnostic-dashboard/
 ├── backend/
 │   ├── app/                # FastAPI application code
@@ -153,9 +172,20 @@ dental-xray-diagnostic-dashboard/
 ├── .gitignore              # Root .gitignore
 ├── docker-compose.yml
 └── README.md
+```
 
+---
 ## 🧪 Running Tests (Backend)
-1.cd backend
-2.Activate virtual environment.
-3.Install test dependencies (if not already via requirements.txt):
-4.pip install pytest pytest-mock requests
+
+1.  `cd backend`
+2.  Activate virtual environment.
+3.  Install test dependencies (if not already via `requirements.txt`):
+    ```bash
+    pip install pytest pytest-mock requests
+    ```
+4.  Run tests:
+    ```bash
+    pytest
+    ```
+
+---
