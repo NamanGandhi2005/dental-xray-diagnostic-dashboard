@@ -7,6 +7,18 @@ The Dental X-ray Diagnostic Dashboard is a full-stack web application designed t
 
 **Disclaimer:** This application is for demonstration and research purposes only and should not be used for actual clinical diagnosis or decision-making without verification by a qualified dental professional.
 
+**🔴 Live Application:** [https://dental-frontend-ui.onrender.com](https://dental-frontend-ui.onrender.com) 🔴
+
+---
+## 🚀 Live Deployment
+
+The application is deployed on Render:
+
+*   **Frontend URL:** [https://dental-frontend-ui.onrender.com](https://dental-frontend-ui.onrender.com)
+*   **Backend API Base URL (used by frontend via proxy/rewrite):** `https://dental-backend-xray-2.onrender.com/api/` *(Note: You typically interact with the frontend URL only)*
+*   **Backend API Docs (Swagger UI):** [https://dental-backend-xray-2.onrender.com/docs](https://dental-backend-xray-2.onrender.com/docs)
+
+
 ---
 
 ## ✨ Features
